@@ -1,4 +1,4 @@
-var slideNum = 1;
+var slideNum = i;
 showSlide(slideNum);
 
 function moveSlides(n) {
@@ -11,9 +11,9 @@ function currentSlide(n) {
 
 function showSlide(n) {
   var i;
-  var slide = "index.html".getElementsByClassName("slides");
-  var dots = "index.html".getElementsByClassName("cursor");
-  var captionText = "index.html".getElementsById("caption");
+  var slide = document.getElementsByClassName("slides");
+  var dots = document.getElementsByClassName("cursor");
+  var captionText = document.getElementsById("caption");
   if (n > slide.length) {slideNum = 1}
   if (n < 1) {slideNum = slide.length}
   for (i=0; i<slide.length; i++) {
