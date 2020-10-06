@@ -5,5 +5,46 @@
       <title> Blake_Gallery </title>
   </head>
   <body>
-    
+    <div class="slideshow">
+      <div class="slides">
+        <div class="number">1/4</div>
+        <img src="img/bOne.png" style="width:100%">
+      </div>
+      <div class="slides">
+        <div class="number">2/4</div>
+        <img src="img/bTwo.png" style="width:100%">
+      </div>
+      <div class="slides">
+        <div class="number">3/4</div>
+        <img src="img/bThree.png" style="width:100%">
+      </div>
+      <div class="slides">
+        <div class="number">4/4</div>
+        <img src="img/bFour.png" style="width:100%">
+      </div>
+<!---->
+      <a class="back" onclick="moveSlides(-1)">&#10094;</a>
+      <a class="next" onclick="moveSlides(1)">&#10095;</a>
+<!---->
+      <div class="captions">
+        <p id="caption"></p>
+      </div>
+<!---->
+      <div class="row">
+        <div class="column">
+          <img class="cursor" src="img/bOne.png" style="width:100%" onclick="currentSlide(1)" alt="Tropics">
+        </div>
+        <div class="column">
+          <img class="cursor" src="img/bTwo.png" style="width:100%" onclick="currentSlide(2)" alt="Beach">
+        </div>
+        <div class="column">
+          <img class="cursor" src="img/bThree.png" style="width:100%" onclick="currentSlide(3)" alt="Sunset">
+        </div>
+        <div class="column">
+          <img class="cursor" src="img/bFour.png" style="width:100%" onclick="currentSlide(4)" alt="Horizon">
+        </div>
+      </div>
+    </div>
+    <scriptsrc src="java/page.js"></scriptsrc>
   </body>
+</html>

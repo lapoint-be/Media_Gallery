@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+}
+
+.slideshow {
+  position: relative;
+}
+
+.slides {
+  display: none;
+}
+
+.back, .next {
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: black;
+}
+
+.next {
+  right: 0;
+}
+
+.number {
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.captions {
+  text-align: center;
+  border-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+.cursor {
+  opacity: .5;
+}
+
+.active, .cursor:hover {
+  opacity: 1;
+}
