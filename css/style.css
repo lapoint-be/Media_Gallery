@@ -4,6 +4,7 @@
 
 .slideshow {
   position: relative;
+  margin: auto;
 }
 
 .slides {
@@ -54,4 +55,64 @@
 
 .active, .cursor:hover {
   opacity: 1;
+}
+
+.one {
+  cursor: crosshair;
+  transition: .25s;
+}
+
+.one:hover {
+  opacity: .75;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 80%;
+  overflow: auto;
+  background-color: #rgba(0, 0, 0, 0.75);
+}
+
+.content {
+  margin: auto;
+  display: block;
+  width: 75%;
+  max-width: 500px;
+  background-color: #000
+}
+
+.interiortext {
+  margin: auto;
+  text-align: center;
+}
+
+.content, .interiortext {
+  animation-name: zoom;
+  animation-duration: .25s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: .25s;
+}
+
+.close:hover, .close:focus {
+  color: #bbb;
+  cursor: crosshair;
 }

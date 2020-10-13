@@ -26,3 +26,18 @@ function showSlide(n) {
   dots[slideNum-1].className+="active";
   captionText.innerHTML=dots[slideNum-1].alt;
 }
+
+var modal = document.getElementById("modalOne");
+var img = document.getElementById("one");
+var modalImg = document.getElementById("img01");
+var textcontent = document.getElementById("interiortext");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  textcontent.innerHTML = this.alt;
+}
+
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function(){
+  modal.style.display = "none";
+}

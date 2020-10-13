@@ -9,19 +9,19 @@
     <div class="slideshow">
       <div class="slides">
         <div class="number">1/4</div>
-        <img src="img/bOne.png" style="width:100%">
+        <img src="img/bOne.png" style="max-height:1000px">
       </div>
       <div class="slides">
         <div class="number">2/4</div>
-        <img src="img/bTwo.png" style="width:100%">
+        <img src="img/bTwo.png" style="max-height:1000px">
       </div>
       <div class="slides">
         <div class="number">3/4</div>
-        <img src="img/bThree.png" style="width:100%">
+        <img src="img/bThree.png" style="max-height:1000px">
       </div>
       <div class="slides">
         <div class="number">4/4</div>
-        <img src="img/bFour.png" style="width:100%">
+        <img src="img/bFour.png" style="max-height:1000px">
       </div>
 <!---->
       <a class="back" onclick="moveSlides(-1)">&#10094;</a>
@@ -47,6 +47,12 @@
       </div>
     </div>
 <!---->
+    <img id="one" src="img/vOne.png" alt="fire" style="max-height:500px">
+    <div id="modalOne" class="modal">
+      <span class="close"> &times;</span>
+      <img class="content" id="img01">
+      <div id="interiortext"></div>
+    </div>
     <script src="java/page.js"></script>
   </body>
 </html>
