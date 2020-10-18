@@ -1,43 +1,53 @@
-var slideNum = 1;
-showSlide(slideNum);
-
+//NAV//
+function navToggle() {
+  var x = document.getElementById("navigation");
+    if (x.className === "nav") {
+    x.className += " responsive";
+  } else {
+    x.className = "nav";
+  }
+}
+//CAROUSEL//
+var slideIndex = 1;
+showSlides(slideIndex);
 function moveSlides(n) {
-  showSlide(slideNum += n);
+  showSlides(slideIndex += n);
 }
-
 function currentSlide(n) {
-  showSlide(slideNum = n)
+  showSlides(slideIndex = n);
 }
-
-function showSlide(n) {
+function showSlides(n) {
   var i;
-  var slide = document.getElementsByClassName("slides");
-  var dots = document.getElementsByClassName("cursor");
-  var captionText = document.getElementById("caption");
-  if (n > slide.length) {slideNum = 1}
-  if (n < 1) {slideNum = slide.length}
-  for (i=0; i < slide.length; i++) {
-    slide[i].style.display = "none";
+  var slides = document.getElementsByClassName("slide");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1;}
+  if (n < 1) {slideIndex = slides.length;}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
   }
-  for (i=0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace("active", "")
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
   }
-  slide[slideNum-1].style.display="block";
-  dots[slideNum-1].className+="active";
-  captionText.innerHTML=dots[slideNum-1].alt;
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+//MODAL//
+var modselect = 0;
+modview(modselect);
+function showModal(m) {
+  modview(modselect = m)
 }
 
-var modal = document.getElementById("modalOne");
-var img = document.getElementById("one");
-var modalImg = document.getElementById("img01");
-var textcontent = document.getElementById("interiortext");
-img.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  textcontent.innerHTML = this.alt;
+function modview(m) {
+  var l;
+  var keys = document.getElementsByClassName("modal")
+  for (l=0; l < keys.length; l++) {
+    keys[l].style.display = "none";
+  }
+  keys[modselect-1].style.display = "block";
 }
 
-var span = document.getElementsByClassName("close")[0];
-span.onclick = function(){
-  modal.style.display = "none";
+function kill() {
+  var kills = document.getElementsByClassName("modal")
+  kills[modselect-1].style.display = "none";
 }

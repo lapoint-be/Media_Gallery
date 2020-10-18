@@ -5,54 +5,234 @@
       <title> Blake_Gallery </title>
   </head>
   <body>
-<!---->
-    <div class="slideshow">
-      <div class="slides">
-        <div class="number">1/4</div>
-        <img src="img/bOne.png" style="max-height:1000px">
-      </div>
-      <div class="slides">
-        <div class="number">2/4</div>
-        <img src="img/bTwo.png" style="max-height:1000px">
-      </div>
-      <div class="slides">
-        <div class="number">3/4</div>
-        <img src="img/bThree.png" style="max-height:1000px">
-      </div>
-      <div class="slides">
-        <div class="number">4/4</div>
-        <img src="img/bFour.png" style="max-height:1000px">
-      </div>
-<!---->
-      <a class="back" onclick="moveSlides(-1)">&#10094;</a>
-      <a class="next" onclick="moveSlides(1)">&#10095;</a>
-<!---->
-      <div class="captions">
-        <p id="caption"></p>
-      </div>
-<!---->
-      <div class="row">
-        <div class="column">
-          <img class="cursor" src="img/bOne.png" style="width:100%" onclick="currentSlide(1)" alt="Tropics">
-        </div>
-        <div class="column">
-          <img class="cursor" src="img/bTwo.png" style="width:100%" onclick="currentSlide(2)" alt="Beach">
-        </div>
-        <div class="column">
-          <img class="cursor" src="img/bThree.png" style="width:100%" onclick="currentSlide(3)" alt="Sunset">
-        </div>
-        <div class="column">
-          <img class="cursor" src="img/bFour.png" style="width:100%" onclick="currentSlide(4)" alt="Horizon">
-        </div>
-      </div>
+<!--NAV-->
+    <nav class="nav" id="navigation">
+      <a href="#" class="links">Home</a>
+      <a href="#" class="links">Gallery</a>
+      <a href="#" class="links">Store</a>
+      <a href="#" class="links">Info</a>
+      <a href="#" class="links">Sign In</a>
+      <a href="javascript:void(0);" class="trigram" onclick="navToggle()">&#9776;</a>
+    </nav>
+<!--CAROUSEL-->
+<section class="carousel">
+  <div class="slideshow">
+    <div class="slide">
+      <img src="https://picsum.photos/1280/448/?image=664" alt="slide one" >
+      <p class="caption">Misty Mountains</p>
     </div>
-<!---->
-    <img id="one" src="img/vOne.png" alt="fire" style="max-height:500px">
-    <div id="modalOne" class="modal">
-      <span class="close"> &times;</span>
-      <img class="content" id="img01">
-      <div id="interiortext"></div>
+    <!--end-->
+    <div class="slide">
+      <img src="https://picsum.photos/1280/448/?image=665" alt="slide two" >
+      <p class="caption">Peerless Vantage</p>
     </div>
+    <!--end-->
+    <div class="slide">
+      <img src="https://picsum.photos/1280/448/?image=666" alt="slide three" >
+      <p class="caption">Green Woods</p>
+    </div>
+    <!--end-->
+    <div class="slide">
+      <img src="https://picsum.photos/1280/448/?image=667" alt="slide four" >
+      <p class="caption">Winding Road</p>
+    </div>
+    <!--end-->
+    <a class="back" onclick="moveSlides(-1)">&#10094;</a>
+    <a class="next" onclick="moveSlides(1)">&#10095;</a>
+  </div>
+  <!--end-->
+  <div class="dot-section">
+    <span class="dot" onclick="currentSlide(1)"><img src="https://picsum.photos/1280/448/?image=664" alt="one" ></span>
+    <span class="dot" onclick="currentSlide(2)"><img src="https://picsum.photos/1280/448/?image=665" alt="two" ></span>
+    <span class="dot" onclick="currentSlide(3)"><img src="https://picsum.photos/1280/448/?image=666" alt="three" ></span>
+    <span class="dot" onclick="currentSlide(4)"><img src="https://picsum.photos/1280/448/?image=667" alt="four" ></span>
+  </div>
+</section>
+<!--GRID-->
+<article class="container">
+  <div class="one card">
+    <div class="thumb"></div><hr>
+    <div class="content">
+      <h3>Bastion</h3>
+      <p>Like some gargantuan gargoyle, this building leers over the landscape.</p>
+      <button class="more" onclick="showModal(1)">More</button>
+    </div>
+    <div class="modal">
+      <span class="close" onclick="kill()">&times;</span>
+      <img src="https://picsum.photos/1280/448/?image=101" class="modimg">
+      <h3>Bastion</h3>
+      <p>Like some gargantuan gargoyle, this building leers over the landscape.</p>
+    </div>
+  </div>
+<!---->
+  <div class="two card">
+    <div class="thumb"></div><hr>
+    <div class="content">
+      <h3>Berries</h3>
+      <p>For some unknown reason, these berries couldn't stand being near each other, hence the clear seperation.</p>
+      <button class="more" onclick="showModal(2)">More</button>
+    </div>
+    <div class="modal">
+      <span class="close" onclick="kill()">&times;</span>
+      <img src="https://picsum.photos/1280/448/?image=102" class="modimg"> <br>
+      <h3>Berries</h3>
+      <p>For some unknown reason, these berries couldn't stand being near each other, hence the clear seperation.</p>
+    </div>
+  </div>
+<!---->
+  <div class="three card">
+    <div class="thumb"></div><hr>
+    <div class="content">
+      <h3>Boundless Spring</h3>
+      <p>Unbeknonst to the subject, the best time to relax in a field is when the grass is actually grown and green.</p>
+      <button class="more" onclick="showModal(3)">More</button>
+    </div>
+    <div class="modal">
+      <span class="close" onclick="kill()">&times;</span>
+      <img src="https://picsum.photos/1280/448/?image=103" class="modimg"> <br>
+      <h3>Boundless Spring</h3>
+      <p>Unbeknonst to the subject, the best time to relax in a field is when the grass is actually grown and green.</p>
+    </div>
+  </div>
+<!---->
+  <div class="four card">
+    <div class="thumb"></div><hr>
+    <div class="content">
+      <h3>Billowing Dreamcatcher</h3>
+      <p>Dreamcatchers, as the name suggests, are only useful when people are sleeping, and quite useless in the middle of the day.</p>
+      <button class="more" onclick="showModal(4)">More</button>
+    </div>
+    <div class="modal">
+      <span class="close" onclick="kill()">&times;</span>
+      <img src="https://picsum.photos/1280/448/?image=104" class="modimg"> <br>
+      <h3>Billowing Dreamcatcher</h3>
+      <p>Dreamcatchers, as the name suggests, are only useful when people are sleeping, and quite useless in the middle of the day.</p>
+    </div>
+  </div>
+<!---->
+  <div class="five card">
+    <div class="thumb"></div><hr>
+    <div class="content">
+      <h3>Battery Issues</h3>
+      <p>Despite the popular belief, turning a laptop off and back on again will not in fact fix a dead battery.</p>
+      <button class="more" onclick="showModal(5)">More</button>
+    </div>
+    <div class="modal">
+      <span class="close" onclick="kill()">&times;</span>
+      <img src="https://picsum.photos/1280/448/?image=5" class="modimg"> <br>
+      <h3>Battery Issues</h3>
+      <p>Despite the popular belief, turning a laptop off and back on again will not in fact fix a dead battery.</p>
+    </div>
+  </div>
+<!---->
+  <div class="six card">
+    <div class="thumb"></div><hr>
+    <div class="content">
+      <h3>Bustling Flowers</h3>
+      <p>Due to the wide variety of flowers, these pictured could literally be said to be any variety and I'd believe it.</p>
+      <button class="more" onclick="showModal(6)">More</button>
+    </div>
+    <div class="modal">
+      <span class="close" onclick="kill()">&times;</span>
+      <img src="https://picsum.photos/1280/448/?image=106" class="modimg"> <br>
+      <h3>Bustling Flowers</h3>
+      <p>Due to the wide variety of flowers, these pictured could literally be said to be any variety and I'd believe it.</p>
+    </div>
+  </div>
+<!---->
+<div class="seven card">
+  <div class="thumb"></div><hr>
+  <div class="content">
+    <h3>Bundles of Wheat</h3>
+    <p>This wheat has several more weeks before it can be harvested, otherwise it won't make a good product.</p>
+    <button class="more" onclick="showModal(7)">More</button>
+  </div>
+  <div class="modal">
+      <span class="close" onclick="kill()">&times;</span>
+    <img src="https://picsum.photos/1280/448/?image=107" class="modimg"> <br>
+    <h3>Bundles of Wheat</h3>
+    <p>This wheat has several more weeks before it can be harvested, otherwise it won't make a good product.</p>
+  </div>
+</div>
+<!---->
+<div class="eight card">
+  <div class="thumb"></div><hr>
+  <div class="content">
+    <h3>Beach Day</h3>
+    <p>Contrary to popular belief, pineapples don't grow on trees, they grow on the ground with one pinappple to a shrub.</p>
+    <button class="more" onclick="showModal(8)">More</button>
+  </div>
+  <div class="modal">
+      <span class="close" onclick="kill()">&times;</span>
+    <img src="https://picsum.photos/1280/448/?image=108" class="modimg"> <br>
+    <h3>Beach Day</h3>
+    <p>Contrary to popular belief, pineapples don't grow on trees, they grow on the ground with one pinappple to a shrub.</p>
+  </div>
+</div>
+<!---->
+<div class="nine card">
+  <div class="thumb"></div><hr>
+  <div class="content">
+    <h3>Broad Oak</h3>
+    <p>Due to the framing of this picture there is no way to tell how wide this tree is, meaning we can't get a rough estimate of its age.</p>
+    <button class="more" onclick="showModal(9)">More</button>
+  </div>
+  <div class="modal">
+      <span class="close" onclick="kill()">&times;</span>
+    <img src="https://picsum.photos/1280/448/?image=109" class="modimg"> <br>
+    <h3>Broad Oak</h3>
+    <p>Due to the framing of this picture there is no way to tell how wide this tree is, meaning we can't get a rough estimate of its age.</p>
+  </div>
+</div>
+<!---->
+<div class="ten card">
+  <div class="thumb"></div><hr>
+  <div class="content">
+    <h3>Banana-Colored Skies</h3>
+    <p>The colors in a sunset are caused by how the light bends through the atmosphere and reflects off the clouds.</p>
+    <button class="more" onclick="showModal(10)">More</button>
+  </div>
+  <div class="modal">
+      <span class="close" onclick="kill()">&times;</span>
+    <img src="https://picsum.photos/1280/448/?image=110" class="modimg">  <br>
+    <h3>Banana-Colored Skies</h3>
+    <p>The colors in a sunset are caused by how the light bends through the atmosphere and reflects off the clouds.</p>
+  </div>
+</div>
+<!---->
+<div class="eleven card">
+  <div class="thumb"></div><hr>
+  <div class="content">
+    <h3>Boomer Transport</h3>
+    <p>Cars contain internal combustion engines, so there is constantly small explosions going on under the hood of any gas powered car.</p>
+    <button class="more" onclick="showModal(11)">More</button>
+  </div>
+  <div class="modal">
+      <span class="close" onclick="kill()">&times;</span>
+    <img src="https://picsum.photos/1280/448/?image=111" class="modimg">  <br>
+    <h3>Boomer Transport</h3>
+    <p>Cars contain internal combustion engines, so there is constantly small explosions going on under the hood of any gas powered car.</p>
+  </div>
+</div>
+<!---->
+<div class="twelve card">
+  <div class="thumb"></div><hr>
+  <div class="content">
+    <h3>Beer Before Brewing</h3>
+    <p>Beer requires more than jus wheat to be brewed, it also takes another plant known as hops to finish the process.</p>
+    <button class="more" onclick="showModal(12)">More</button>
+  </div>
+  <div class="modal">
+      <span class="close" onclick="kill()">&times;</span>
+    <img src="https://picsum.photos/1280/448/?image=112" class="modimg"> <br>
+    <h3>Beer Before Brewing</h3>
+    <p>Beer requires more than jus wheat to be brewed, it also takes another plant known as hops to finish the process.</p>
+  </div>
+</div>
+<!---->
+</article>
+<footer>
+  <p>&copy; 2020, Blake LaPoint</p>
+</footer>
     <script src="java/page.js"></script>
-  </body>
-</html>
+</body>
