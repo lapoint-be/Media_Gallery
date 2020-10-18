@@ -1,0 +1,188 @@
+* {
+  box-sizing: border-box;
+}
+
+footer {
+  background-color: #666;
+  color: #BBB;
+  padding: 1em;
+  text-align: center;
+}
+/*NAV CONTENT*/
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #222;
+  color: #BBB;
+  padding: 1em;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  nav {flex-direction: row;}
+}
+nav a {
+  color: #DDD;
+  text-decoration: none;
+}
+.trigram {
+  font-size: 1.75em;
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .nav a {display: none;}
+  .nav a.trigram {display: inherit; align-self: flex-end;}
+}
+@media screen and (max-width: 767px) {
+  .nav.responsive {align-items: center;}
+  .nav.responsive a {display:inherit;}
+  .nav.responsive a.trigram {visibility: hidden; position: absolute; right: 3%; top: 2%;}
+  .nav.responsive a.trigram::after {content:'\000D7'; visibility:visible; text-indent: -.5em;}
+}
+
+/*CAROUSEL CONTENT*/
+.carousel {
+  width: 100%;
+  margin-bottom: 1em;
+  padding: 1em;
+  background-color: #666;
+}
+.carousel img {
+  width: 100%;
+}
+.caption {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+.slideshow {
+  position: relative;
+  max-width: 1920px;
+  margin: auto;
+}
+.slide {
+  display: none;
+}
+.back, .next {
+  position: absolute;
+  top: 50%;
+  width: auto;
+  color: #DDD;
+}
+.next {
+  right: 0;
+}
+.back:hover, .next:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+.dot-section {
+  text-align: center;
+  width: 100%;
+}
+.dot {
+  width: 20%;
+  opacity: .5;
+  display: inline-block;
+}
+.dot img {
+  width: 100%;
+}
+.dot.active {
+  opacity: 1;
+}
+
+/*GRID*/
+.container {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: 1fr;
+}
+@media screen and (min-width: 550px) {
+  .container {grid-template-columns: repeat(2, 1fr);}
+}
+@media screen and (min-width: 768px) {
+  .container {grid-template-columns: repeat(3, 1fr);}
+}
+@media screen and (min-width: 990px) {
+  .container {grid-template-columns: repeat(4, 1fr);}
+}
+.content {
+  padding: 1em;
+}
+.thumb {
+  background-position: center center;
+  background-size: cover;
+  padding-bottom: 56%;
+}
+.card {
+  border: 1px solid #666;
+  background-color: #bbb;
+}
+.one .thumb {
+  background-image: url('https://picsum.photos/1280/448/?image=101');
+}
+.two .thumb {
+  background-image: url('https://picsum.photos/1280/448/?image=102');
+}
+.three .thumb {
+  background-image: url('https://picsum.photos/1280/448/?image=103');
+}
+.four .thumb {
+  background-image: url('https://picsum.photos/1280/448/?image=104');
+}
+.five .thumb {
+  background-image: url('https://picsum.photos/1280/448/?image=5');
+}
+.six .thumb {
+  background-image: url('https://picsum.photos/1280/448/?image=106');
+}
+.seven .thumb {
+  background-image: url('https://picsum.photos/1280/448/?image=107');
+}
+.eight .thumb {
+  background-image: url('https://picsum.photos/1280/448/?image=108');
+}
+.nine .thumb {
+  background-image: url('https://picsum.photos/1280/448/?image=109');
+}
+.ten .thumb {
+  background-image: url('https://picsum.photos/1280/448/?image=110');
+}
+.eleven .thumb {
+  background-image: url('https://picsum.photos/1280/448/?image=111');
+}
+.twelve .thumb {
+  background-image: url('https://picsum.photos/1280/448/?image=112');
+}
+
+/*MODAL*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 30%;
+  width: 100%;
+  height: auto;
+  overflow: auto;
+  background-color: #666;
+  font-weight: bold;
+}
+.close {
+  position: absolute;
+  top: 5px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: cell;
+}
+.modimg {
+  float: left;
+  width: 50%;
+  padding-right: 10px;
+}
